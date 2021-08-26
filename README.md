@@ -33,7 +33,7 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
 ## Twitch Setup
 - Create an [APP](https://dev.twitch.tv/console/apps/) and save your APP ID and Secret
 - Add the following URL using your domain name or ngrock tunnel URL
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Redirect.png" width="50%">
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Redirect.png" width="80%">
 
 ## Node-RED Setup
 - [Import](https://nodered.org/docs/user-guide/editor/workspace/import-export) the [flow](https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/EventSub-Twitch-Flow.json)
