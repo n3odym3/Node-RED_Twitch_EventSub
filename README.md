@@ -34,6 +34,8 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
 - Add the following URL using your domain name or ngrok tunnel URL
 <img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Redirect.png" width="80%">
 
+Rem : As your Node-RED should be secured with http basic auth the URI are **https://admin:password@xxxxxxxxx.eu.ngrok.io** or **https://admin:password@your.domain.name** with "admin" and "password" corresponding to you Node-RED auth.
+
 ## Node-RED Setup
 - [Import](https://nodered.org/docs/user-guide/editor/workspace/import-export) the [flow](https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/EventSub-Twitch-Flow.json)
 - Edit the API Settings node with your
@@ -41,7 +43,7 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
    - Twitch client secret
    - Sub secret : a password (defined by the user) to validate the Twitch event signature 
    - Twitch channel 
-   - Sub URI : your Node-RED server name or ngrok tunnel URL **WITHOUT**  "HTTPS://" (Ex : your.domain.name or xxxxxxxxxxx.ngrok.io)
+   - Sub URI : your Node-RED server name or ngrok tunnel URL **WITHOUT**  "HTTPS://" (Ex : your.domain.name or xxxxxxxxxxx.ngrok.io and admin:password@your.domain.name or admin:password@xxxxxxxxxxx.ngrok.io for a properly secured server)
    - [Scopes](https://dev.twitch.tv/docs/authentication#scopes) (space-separated)
 <img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Settings.png" width="50%">
 - Go to the Node-RED dashboard (https://your.domain.name/ui or https://xxxxxxxxxx.ngrok.io/ui)
