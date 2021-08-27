@@ -1540,7 +1540,7 @@
         "z": "7c36e6b244586b90",
         "g": "ebb10d640f7ac801",
         "name": "Request channel ID",
-        "func": "msg = {\n    \"headers\" : {\n        \"Client-ID\" : flow.get('ClientID'),\n        \"Authorization\" : flow.get('AppToken'),\n        \"Accept\" : \"application/vnd.twitchtv.v5+json\"\n    },\n    \"url\": \"https://api.twitch.tv/helix/search/channels?query=\" + flow.get(\"Channel\")\n}\nreturn msg;",
+        "func": "msg = {\n    \"headers\" : {\n        \"Client-ID\" : flow.get('ClientID'),\n        \"Authorization\" : flow.get('AppToken'),\n        \"Accept\" : \"application/vnd.twitchtv.v5+json\"\n    },\n     \"url\": 'https://api.twitch.tv/helix/search/channels?query=\"' + flow.get(\"Channel\") + '\"'\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
