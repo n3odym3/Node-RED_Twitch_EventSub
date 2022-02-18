@@ -63,6 +63,8 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
 - Generate an APP token and USER token by clicking on Auhtorize APP and Authorize USER (will requires to loggin with your Twitch account and accept the scopes)
 - Optional : you can test the validity and expiration of the Token using "Validate" nodes on the Node-RED editor 
 
+*Note : The Authorize App and Authorize User buttons will appear when the API options are submitted*
+
 ## Subscribe
 - Type the channel username
 - Subscribe to an event by selecting the desired Event on the Node-RED GUI
