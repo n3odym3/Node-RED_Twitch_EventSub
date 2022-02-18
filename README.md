@@ -38,6 +38,11 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
 *Note : As your Node-RED should be secured with http basic auth the URI are **https://admin:password@xxxxxxxxx.eu.ngrok.io** or **https://admin:password@your.domain.name** with "admin" and "password" corresponding to you Node-RED auth.*
 
 ## Node-RED Setup
+
+### API
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Settings1.png" width="75%">
+
 - [Import](https://nodered.org/docs/user-guide/editor/workspace/import-export) the [flow](https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/EventSub-Twitch-Flow.json)
 - Edit the API Settings node with your
    - Twitch client ID
@@ -45,35 +50,46 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
    - Sub secret : a password (defined by the user) to validate the Twitch event signature 
    - Twitch channel 
    - Sub URI : your Node-RED server name or ngrok tunnel URL **WITHOUT**  "HTTPS://" (Ex : your.domain.name or xxxxxxxxxxx.ngrok.io and admin:password@your.domain.name or admin:password@xxxxxxxxxxx.ngrok.io for a properly secured server)
-   - [Scopes](https://dev.twitch.tv/docs/authentication#scopes) (space-separated)
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Settings.png" width="50%">
+   - [Scopes](https://dev.twitch.tv/docs/authentication#scopes) (space-separated) 
+   
+*Scopes*
+> bits:read channel:manage:broadcast channel:manage:polls channel:manage:predictions channel:manage:redemptions channel:read:polls channel:read:predictions channel:read:redemptions channel:read:subscriptions moderation:read user:read:follows user:read:subscriptions channel:moderate channel:read:hype_train
+
+### Tokens
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Auth.png" width="30%">
 
 - Go to the Node-RED dashboard (https://your.domain.name/ui or https://xxxxxxxxxx.ngrok.io/ui)
 - Generate an APP token and USER token by clicking on Auhtorize APP and Authorize USER (will requires to loggin with your Twitch account and accept the scopes)
-- Optional : you can test the validity and expiration of the Token using "Validate" nodes on the Node-RED editor
-- Clic on the "Get channel ID" inject node 
- 
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Authorizations.png" width="25%">
+- Optional : you can test the validity and expiration of the Token using "Validate" nodes on the Node-RED editor 
 
 ## Subscribe
+- Type the channel username
 - Subscribe to an event by selecting the desired Event on the Node-RED GUI
 - Clic on "Subscribe"
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Sub1.png" width="30%">
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Sub.png" width="50%">
 
 ## Unsubscribe
 - Refresh the subscriptions
+- Select the channel 
 - Select the event you want to unsubscribe
 - Clic on "Unsubscribe"
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/UnSubOK.png" width="30%">
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Unsub.png" width="30%">
 
 ## Events
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Responses.png" width="50%">
+
+If you subscribed to multiple channels you can separte the event by the broadcaster channel ID.
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Subfilter.png" width="25%">
 
 - When an event is posted to /webhook the JSON will be validated using the "Sub secret" code and sent to the second flow "Reponse"
-
 - The "Inject" node and "Fake event" function can be removes as they are only used for Testing/Debug purposes
-
 - Retrieve and use the events informations by connectig your node/function to the annotated functions
-<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Annotation.png" width="50%">
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Responses.png" width="40%">
+
+<img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Annotation.png" width="40%">
 
 **HAVE FUN**
