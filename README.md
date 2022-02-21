@@ -52,9 +52,11 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
    - Sub URI : your Node-RED server name or ngrok tunnel URL **WITHOUT**  "HTTPS://" (Ex : your.domain.name or xxxxxxxxxxx.ngrok.io and admin:password@your.domain.name or admin:password@xxxxxxxxxxx.ngrok.io for a properly secured server)
    - [Scopes](https://dev.twitch.tv/docs/authentication#scopes) (space-separated) 
    
-*Scopes*
+*Recommended Scopes*
 > bits:read channel:manage:broadcast channel:manage:polls channel:manage:predictions channel:manage:redemptions channel:read:polls channel:read:predictions channel:read:redemptions channel:read:subscriptions moderation:read user:read:follows user:read:subscriptions channel:moderate channel:read:hype_train
 
+*All scopes*
+> analytics:read:extensions analytics:read:games bits:read channel:edit:commercial channel:manage:broadcast channel:manage:extensions channel:manage:polls channel:manage:predictions channel:manage:redemptions channel:manage:schedule channel:manage:videos channel:read:editors channel:read:goals channel:read:hype_train channel:read:polls channel:read:predictions channel:read:redemptions channel:read:stream_key channel:read:subscriptions clips:edit moderation:read moderator:manage:banned_users moderator:read:blocked_terms moderator:manage:blocked_terms moderator:manage:automod moderator:read:automod_settings moderator:manage:automod_settings moderator:read:chat_settings moderator:manage:chat_settings user:edit user:edit:follows user:manage:blocked_users user:read:blocked_users user:read:broadcast user:read:email user:read:follows user:read:subscriptions channel:moderate chat:edit chat:read whispers:read whispers:edit
 ### Tokens
 
 <img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Auth.png" width="30%">
