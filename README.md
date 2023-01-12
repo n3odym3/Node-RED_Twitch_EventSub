@@ -35,7 +35,8 @@ Node-RED flow to subscribe, receive and respond to Twitch webhook
 - Add the following URL using your domain name or ngrok tunnel URL
 <img src="https://github.com/n3odym3/Node-RED_Twitch_EventSub/blob/main/pictures/Redirect.png" width="80%">
 
-*Note : As your Node-RED should be secured with http basic auth the URI are **https://admin:password@xxxxxxxxx.eu.ngrok.io** or **https://admin:password@your.domain.name** with "admin" and "password" corresponding to you Node-RED auth.*
+*Note : As your Node-RED should be secured with http basic auth the URI are **https://admin:password@xxxxxxxxx.eu.ngrok.io** or **https://admin:password@your.domain.name** with "admin" and "password" corresponding to you Node-RED dashboard auth. 
+It can be different from your Node-RED admin auth.*
 
 ## Node-RED Setup
 
